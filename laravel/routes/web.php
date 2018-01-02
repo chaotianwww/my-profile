@@ -11,12 +11,15 @@
 |
 */
 
-	Route::get('/', function () {
-	    return view('index');
-	});
+	Route::group( [ 'prefix' => 'my' ] , function () {
+		
+		Route::get( '/' , function () {
+			return view( 'index' );
+		} );
 
-	Route::get('tool', function () {
-		return view('sub-page.tool');
-	});
+		Route::get( 'tool' , function () {
+			return view( 'sub-page.tool' );
+		} );
 
-	Route::get( 'shanghai' , 'TravelController@ShangHai' );
+		Route::get( 'shanghai' , 'TravelController@ShangHai' );
+	});
