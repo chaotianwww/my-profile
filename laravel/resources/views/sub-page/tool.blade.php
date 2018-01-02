@@ -9,9 +9,20 @@
            background: #fff;
         }
 
-        .input{
+        .input,.output{
             width:300px;
             height: 800px;
+            padding:10px;
+        }
+        .center-div{
+            padding-top:50px;
+        }
+        .center-div p{
+            text-align: center;
+            cursor: pointer;
+        }
+        .tools{
+            width:300px;
         }
     </style>
 @endsection
@@ -24,18 +35,20 @@
         </div>
     </div>
     <div class="row">
-        <div class="col"> <p><textarea class="input"></textarea></p> </div>
-        <div class="col">
-            <p> <input type="button" class="tools" value="md5"  /> </p>
-            <p><input type="button"  class="tools" value="sha1" /></p>
-            <p><input type="button"  class="tools" value="json_encode" /></p>
-            <p><input type="button"  class="tools" value="json_decode" /></p>
-            <p><input type="button"  class="tools" value="url_encode" /></p>
-            <p><input type="button"  class="tools" value="url_decode" /></p>
-            <p><input type="button"  class="tools" value="base64encode" /></p>
-            <p><input type="button"  class="tools" value="base64decode" /></p>
+        <div class="col">before <p><textarea class="input" placeholder="please input some text..."></textarea></p> </div>
+        <div class="col center-div">
+            <p> <input type="button" class="tools btn btn-outline-secondary" value="md5"  /> </p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="sha1" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="json_encode" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="json_decode" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="url_encode" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="url_decode" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="base64encode" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="base64decode" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="strtotime" /></p>
+            <p><input type="button"  class="tools btn btn-outline-secondary" value="timetostr" /></p>
         </div>
-        <div class="col"><p><textarea class="input"></textarea></p>  </div>
+        <div class="col">after<p><textarea class="output" placeholder="Text will show here after transfer"></textarea></p>  </div>
     </div>
 
 
@@ -50,11 +63,16 @@
            });
             function getVal(type) {
                 var data = {};
-                var url = '/tool/getVal';
+                var url = 'tool/getVal';
                 data.type = type;
                 data.val  = $('.input').val();
-                $.ajax(url, data, function(res){
-                    console.log(res);
+                if(!data.val){
+                    return false;
+                }
+                $.post(url, data, function(res){
+                    if(res.data){
+                        $(".output").val(res.data.val);
+                    }
                 });
             }
 

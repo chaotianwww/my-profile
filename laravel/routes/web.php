@@ -15,13 +15,18 @@
 	} );
 	Route::group( [ 'prefix' => 'me' ] , function () {
 
-		Route::get( 'tool' , function () {
-			return view( 'sub-page.tool' );
-		} );
-
 		Route::get('/','MeController@intro');
 
 	});
+	Route::group( [ 'prefix' => 'tool' ] , function () {
+		Route::get( '/' , function () {
+			return view( 'sub-page.tool' );
+		} );
+		Route::post('getVal','ToolController@getVal');
+
+	});
+
+
 	Route::group( [ 'prefix' => 'travel' ] , function () {
 
 		Route::get( 'shanghai' , 'TravelController@shanghai' );
