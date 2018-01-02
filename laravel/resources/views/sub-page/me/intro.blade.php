@@ -16,7 +16,7 @@
         .main-header{
             min-height: 100px;
         }
-        .main-body{
+        .main-body1{
             border:1px solid;
             padding:20px;
             margin-bottom: 100px;
@@ -34,10 +34,9 @@
 @section('body')
     @parent
     <div class="row">
-        <div class="col-1"> </div>
-        <div class="col-10">
-            <!--startprint-->
+        <div class="col-12">
             <div class="main-header"></div>
+            <!--startprint-->
             <div class="main-body">
                 <h3>青山（cyan）</h3>
                 <p>身份证名：李超</p>
@@ -130,12 +129,11 @@
                 <p>1、项目开发</p>
                 <p>2、实习生培训</p>
             </div>
-            <div class="main-footer">
-                <button></button>
-            </div>
             <!--endprint-->
+            <div class="main-footer">
+                <button onclick="doPrint()">打印简历</button>
+            </div>
         </div>
-        <div class="col-1"></div>
     </div>
 @endsection
 
