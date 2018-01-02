@@ -51,5 +51,5 @@
 @endsection
 
 @section('footer')
-    @parent`
+    @parent
 @endsection

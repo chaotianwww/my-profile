@@ -10,16 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-	Route::group( [ 'prefix' => 'my' ] , function () {
-
-		Route::get( '/' , function () {
-			return view( 'index' );
-		} );
+	Route::get( '/' , function () {
+		return view( 'index' );
+	} );
+	Route::group( [ 'prefix' => 'me' ] , function () {
 
 		Route::get( 'tool' , function () {
 			return view( 'sub-page.tool' );
 		} );
 
-		Route::get( 'shanghai' , 'TravelController@ShangHai' );
+		Route::get('/','MeController@intro');
+
 	});
+	Route::group( [ 'prefix' => 'travel' ] , function () {
+
+		Route::get( 'shanghai' , 'TravelController@shanghai' );
+
+	});
+
