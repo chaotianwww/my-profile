@@ -55,7 +55,7 @@
             show_time();
 
             $(".next-page").click(function(){
-               location.href="/tool";
+               location.href="/my/tool";
             });
         });
         function show_time()
