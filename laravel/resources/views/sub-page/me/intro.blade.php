@@ -20,6 +20,8 @@
             border:1px solid;
             padding:20px;
             margin-bottom: 100px;
+            max-height: 800px;
+            overflow-y: scroll;
         }
         .intro{
             font-size:14px;
