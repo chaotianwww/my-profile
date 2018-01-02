@@ -90,7 +90,7 @@
                 <h4>工作经验</h4>
                 <p>2017.5-至今</p>
                 <p>上海寅诺管理咨询有限公司（php高级开发）</p>
-                <p>主要工具：php（laravel）mysql redis mq</p>
+                <p>主要工具：php（laravel） react mysql redis mq</p>
                 <p>第三方api：facebook paypal aws-s3</p>
                 <p>工作职责：</p>
                 <p>1、项目架构设计</p>
