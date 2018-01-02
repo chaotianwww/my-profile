@@ -11,7 +11,9 @@
             background-attachment:fixed;
             //color:#fff;
             vertical-align: middle;
-            max
+        }
+        .container-fluid{
+            width:65%;
         }
         .main-header{
             min-height:50px;
@@ -23,6 +25,7 @@
             max-height: 800px;
             overflow-y: scroll;
         }
+
         .intro{
             font-size:14px;
         }

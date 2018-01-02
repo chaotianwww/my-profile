@@ -35,8 +35,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">before <p><textarea class="input" placeholder="please input some text..."></textarea></p> </div>
-        <div class="col center-div">
+        <div class="col-2">before <p><textarea class="input" placeholder="please input some text..."></textarea></p> </div>
+        <div class="col-2 center-div">
             <p> <input type="button" class="tools btn btn-outline-secondary" value="md5"  /> </p>
             <p><input type="button"  class="tools btn btn-outline-secondary" value="sha1" /></p>
             <p><input type="button"  class="tools btn btn-outline-secondary" value="json_encode" /></p>
@@ -69,6 +69,15 @@
                 if(!data.val){
                     return false;
                 }
+                if(type == "json_decode"){
+                    var val = json_decode(JSON.parse(data.val),1);
+                    $(".output").val(val).css("width","100%");
+                    return false;
+                }else  if(type == "json_encode"){
+                    var val = data.val.replace(/\n/ig,'').replace(/\s/ig,'');
+                    $(".output").val(val).css("width","100%");
+                    return false;
+                }
                 $.post(url, data, function(res){
                     if(res.data){
                         $(".output").val(res.data.val);
@@ -76,6 +85,24 @@
                 });
             }
 
+            function json_decode(val,row)
+            {
+                var tmpVal = '';
+                tmpVal += !Array.isArray(val)?"{\n":"[\n";
+                var space = "";
+                for(var i = 0 ;i < row*8;i++){
+                    space += ' ';
+                }
+                for(var i in val){
+                    if(typeof(val[i]) == 'object'){
+                        tmpVal += space + (!Array.isArray(val)? ('"'+i+'" : '):"")+json_decode(val[i],row+1);
+                    }else{
+                        tmpVal += space + '"'+i+'" : "'+val[i]+'"\n';
+                    }
+                }
+                tmpVal += space + (!Array.isArray(val)?"}\n":"]\n");
+                return tmpVal;
+            }
         });
     </script>
 @endsection
