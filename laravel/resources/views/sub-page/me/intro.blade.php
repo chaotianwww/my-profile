@@ -6,10 +6,10 @@
     @parent
     <style>
         body{
-            background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514881596961&di=b6a7d8e6ee5597732134c45f16d6e51b&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D2725714579%2C1077582532%26fm%3D214%26gp%3D0.jpg");
+            //background-image: url("https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1283206969,1813033469&fm=27&gp=0.jpg");
             background-repeat:no-repeat;
             background-attachment:fixed;
-            color:#fff;
+            //color:#fff;
             vertical-align: middle;
             max
         }
