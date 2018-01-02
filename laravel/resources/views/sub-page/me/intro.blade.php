@@ -19,6 +19,7 @@
         .main-body{
             border:1px solid;
             padding:20px;
+            margin-bottom: 100px;
         }
         .intro{
             font-size:14px;
@@ -33,6 +34,7 @@
     <div class="row">
         <div class="col-1"> </div>
         <div class="col-10">
+            <!--startprint-->
             <div class="main-header"></div>
             <div class="main-body">
                 <h3>青山（cyan）</h3>
@@ -126,7 +128,10 @@
                 <p>1、项目开发</p>
                 <p>2、实习生培训</p>
             </div>
-            <div class="main-footer"></div>
+            <div class="main-footer">
+                <button></button>
+            </div>
+            <!--endprint-->
         </div>
         <div class="col-1"></div>
     </div>
@@ -134,4 +139,15 @@
 
 @section('footer')
     @parent
+    <script>
+        function doPrint() {
+            bdhtml=window.document.body.innerHTML;
+            sprnstr="<!--startprint-->";
+            eprnstr="<!--endprint-->";
+            prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+        }
+    </script>
 @endsection
