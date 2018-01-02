@@ -14,7 +14,7 @@
             max
         }
         .main-header{
-            min-height: 100px;
+            min-height:50px;
         }
         .main-body1{
             border:1px solid;
