@@ -53,6 +53,7 @@
         </div>
         <div class="col">after<p><textarea class="output" placeholder="Text will show here after transfer"></textarea></p>  </div>
     </div>
+    <p style="text-align:right"><a href="/tool/php/frame">more php doc....</a></p>
 
 
 @endsection
