@@ -14,6 +14,9 @@
             height: 800px;
             padding:10px;
         }
+        .output{
+            width:100%;
+        }
         .center-div{
             padding-top:50px;
         }
@@ -55,7 +58,7 @@
 @endsection
 
 @section('footer')
-    @parent`
+    @parent
     <script>
         $(function(){
            $('.tools').click(function(){
@@ -71,11 +74,11 @@
                 }
                 if(type == "json_decode"){
                     var val = json_decode(JSON.parse(data.val),1);
-                    $(".output").val(val).css("width","100%");
+                    $(".output").val(val);
                     return false;
                 }else  if(type == "json_encode"){
                     var val = data.val.replace(/\n/ig,'').replace(/\s/ig,'');
-                    $(".output").val(val).css("width","100%");
+                    $(".output").val(val);
                     return false;
                 }
                 $.post(url, data, function(res){

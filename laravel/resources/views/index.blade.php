@@ -18,6 +18,8 @@
         .row{
             display: table-cell;
             vertical-align: middle;
+            width:100%;
+
         }
         /* centered columns styles */
         .row-centered {
@@ -38,7 +40,7 @@
 
 @section('body')
     @parent
-    <div class="row row-centered">
+    <div class="row-centered">
         <div class="well col-md-6 col-centered">
             <h1>Welcome，cyan</h1>
             <h3><span class="now-time"></span></h3>
@@ -55,7 +57,7 @@
             show_time();
 
             $(".next-page").click(function(){
-               location.href="/me/tool";
+               location.href="/tool";
             });
         });
         function show_time()
