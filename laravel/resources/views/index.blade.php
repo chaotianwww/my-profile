@@ -10,9 +10,10 @@
             color:#fff;
             vertical-align: middle;
         }
-        .container{
+        .container-fluid{
             display:table;
             height:949px;
+            padding-top:15%;
         }
 
         .row{
